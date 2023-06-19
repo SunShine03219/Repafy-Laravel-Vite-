@@ -3,9 +3,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>{{ config('app.name', 'Reparfy') }}</title>
-        <meta name="description" content="Reparfy - Pide y envía paquetes a tu ubicación(Reparfy is a platform for easy and convenient order and delivery of packages to your desired location.)">
-        <link rel="canonical" href="https://www.reparfy.com/">
+        <title>{{ config('app.name', 'Repafy') }}</title>
+        <meta name="description" content="Repafy - Pide y envía paquetes a tu ubicación(Repafy is a platform for easy and convenient order and delivery of packages to your desired location.)">
+        <link rel="canonical" href="https://www.repafy.com/">
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
@@ -53,13 +53,13 @@
                 </div>
                 <div class="w-full">
                     <p class="m-10 leading-10 pt-10 text-justify text-white text-3xl">
-                        Reparfy es una plataforma para ordenar y entregar paquetes de manera fácil y conveniente a la ubicación deseada.
+                        Repafy es una plataforma para ordenar y entregar paquetes de manera fácil y conveniente a la ubicación deseada.
                     </p>
                     <p class="m-10 leading-10 text-justify text-white text-3xl">
                         Ordene y envíe paquetes a la ubicación deseada con solo unos pocos clics.
                     </p>
                     <p class="m-10 leading-10 text-justify text-white text-3xl">
-                        Experimente los servicios de entrega de última milla sin complicaciones con Reparfy.</p>
+                        Experimente los servicios de entrega de última milla sin complicaciones con Repafy.</p>
                 </div>
             </div>
             <hr class="dark:bg-white w-auto m-10">
@@ -67,7 +67,7 @@
                 <a href="#" class="text-blue-300">Cómo funciona &nbsp; |</a>
                 <a href="#" class="text-blue-300"> &nbsp; Términos  &nbsp;|</a>
                 <a href="#" class="text-blue-300">&nbsp; Privacidad &nbsp;</a>
-                <span class="px-6 text-white">derechos de autor(c) 2023. Reparfy.com </span>
+                <span class="px-6 text-white">derechos de autor(c) 2023. Repafy.com </span>
             </footer>
     </body>
 </html>
