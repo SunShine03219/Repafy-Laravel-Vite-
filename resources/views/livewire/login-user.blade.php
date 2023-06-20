@@ -2,33 +2,16 @@
     <!-- Session Status -->
     <x-auth-session-status class="mb-4 dark:bg-black" :status="session('status')" />
 
-    <form method="POST" action="{{ route('login') }}">
+    <form class="w-full" method="POST" action="{{ route('login') }}">
         @csrf
         <div class="mt-4">
-            <x-input-label for="country" :value="__('país')" />
-            <x-simple-select
-                wire:model.lazy="country"
-                name="country"
-                id="country"
-                value-field='id'
-                text-field='name'
-                :options="$countries"
-                placeholder="seleccionar país"
-                search-input-placeholder="Search Country"
-                :searchable="true"
-                class="py-1 block mt-1 w-full border-gray-300 dark:border-gray-700 dark:bg-gray-700 dark:text-gray-700 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm"
-            />
-            <x-input-error :messages="$errors->get('countryl')" class="mt-2" />
-        </div>
-        <div class="mt-4">
-            <x-input-label for="phone" :value="__('Número de WhatsApp')" />
-            <x-text-input type="number"  id="phone" min="1" max="9999999999" class="block mt-1 w-full dark:bg-gray-100" placeholder="xxxxxxxxxx"  name="phone" wire:model.lazy="phone" required autocomplete="phone" />
+            <x-input-label class="text-2xl" for="phone" :value="__('Número de WhatsApp')" />
+            <x-text-input type="number"  id="phone" min="0" max="99999999999" class="block mt-1 w-full dark:bg-gray-100" placeholder="xxxxxxxxxx"  name="phone" wire:model.lazy="phone" required autocomplete="phone" />
             <x-input-error :messages="$errors->get('phone')" class="mt-2" />
         </div>
-
         <!-- Password -->
         <div class="mt-4">
-            <x-input-label class="dark:text-gray-500" for="password" :value="__('contraseña')" />
+            <x-input-label class="text-2xl" for="password" :value="__('contraseña')" />
 
             <input id="password" class="block mt-1 w-full rounded-md dark:bg-gray-700 text-white"
                             type="password"
@@ -42,24 +25,23 @@
         <div class="block mt-4 ">
             <label for="remember_me" class="inline-flex items-center">
                 <input id="remember_me" type="checkbox" class="rounded border-gray-300 dark:border-gray-100 dark:bg-gray-200 text-indigo-600 shadow-sm focus:ring-indigo-500 dark:focus:ring-indigo-600 dark:focus:ring-offset-gray-800" name="remember">
-                <span class="ml-2 text-sm text-gray-600 dark:text-gray-100">{{ __('Acuérdate de mí') }}</span>
+                <span class="text-1xl ml-2 text-gray-600 dark:text-gray-100">{{ __('Recordar') }}</span>
             </label>
         </div>
 
-        <div class="flex items-center justify-end mt-4">
+        <div class="sm:flex items-center justify-end mt-4">
             @if (Route::has('forgot-password'))
-                <a class="underline text-sm text-gray-600 dark:text-gray-100 hover:text-black dark:hover:font-bold rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('forgot-password') }}">
+                <a class="mb-5 w-full flex underline text-1xl text-gray-600 dark:text-gray-100 hover:text-black dark:hover:font-bold rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('forgot-password') }}">
                     {{ __('¿Olvidaste tu contraseña?') }}
                 </a>
             @endif
-
-            <x-primary-button class="ml-3">
-                {{ __('Entrar a mi cuenta') }}
+            <x-primary-button class="mb-5 w-full justify-center flex ml-3 text-1xl">
+                {{ __('Ingresar') }}
             </x-primary-button>
         </div>
 
         <div class="flex items-center justify-center mt-4">
-            <a class="underline text-sm text-gray-100 dark:text-gray-100 hover:text-gray-900 dark:hover:font-bold rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('register') }}">
+            <a class="underline text-1xl text-gray-100 dark:text-gray-100 hover:text-gray-900 dark:hover:font-bold rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('register') }}">
                 {{ __('¿No tienes una cuenta?') }}
             </a>
         </div>

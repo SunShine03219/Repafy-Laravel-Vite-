@@ -1,31 +1,31 @@
-<section>
+<section class="w-full">
     {{-- <form id="send-verification" method="post" action="{{ route('verification.send') }}">
         @csrf
     </form> --}}
-    <div class="flex">
+    <div class="w-full flex flex-col md:flex-row">
         <div class="flex-none">
             @livewire('profile-avatar', ['id' => $user->id])
         </div>
-        <div class="flex-1 ml-5">
+        <div class="w-full">
             <form wire:submit.prevent="updateProfile">
                 @csrf
                 @method('patch')
-                <div class="grid grid-cols-3 gap-4">
+                <div class="w-full flex flex-col gap-5 md:flex-row md:gap-10">
                      <!-- Division -->
-                     <div class="mt-4">
-                        <x-input-label for="division" class="underline pb-3" :value="__('Tipo de cuenta')" />
-                        <span class="text-white">{{ $user->divisionDetail->name }}</span>
+                     <div class="w-full justify-center">
+                        <x-input-label for="division" class="underline py-2" :value="__('Tipo de cuenta')" />
+                        <span class="text-white text-center py-2">{{ $user->divisionDetail->name }}</span>
                     </div>
                     <!-- Name -->
-                    <div class="mt-4">
+                    <div class="w-full">
                         <x-input-label for="name" class="underline" :value="__('Nombre')" />
-                        <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" wire:model.lazy="name" required autocomplete="name" />
+                        <x-text-input id="name" class="mt-1 w-full" type="text" name="name" wire:model.lazy="name" required autocomplete="name" />
                         <x-input-error :messages="$errors->get('name')" class="mt-2" />
                     </div>
                     <!-- Home Town -->
-                    <div class="mt-4">
+                    <div class="w-full">
                         <x-input-label for="zip" class="underline" :value="__('ZIP')" />
-                        <x-text-input id="zip" class="block mt-1 w-full" type="text" name="zip" wire:model.lazy="zip" required autocomplete="zip" />
+                        <x-text-input id="zip" class="mt-1 w-full" type="text" name="zip" wire:model.lazy="zip" required autocomplete="zip" />
                         <x-input-error :messages="$errors->get('zip')" class="mt-2" />
                     </div>
                     {{-- <!-- country -->

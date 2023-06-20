@@ -20,7 +20,6 @@ class ForgotPassword extends Component
     protected function rules()
     {
         return [
-            'country' => ['required'],
             'phone' => ['required']
         ];
     }
@@ -31,17 +30,15 @@ class ForgotPassword extends Component
         $this->validate();
 
         // Confirm User
-        $Is_user = \App\Models\User::where('country', $this->country)->where('phone', $this->phone)->get()->toArray();
+        $Is_user = User::where('phone', $this->phone)->get()->toArray();
 
         if(empty($Is_user)) {
             $this->notify('Este número de teléfono de WhatsApp aún no estaba registrado.', 'advertencia');
 
-            $this->country = '';
             $this->phone = '';
         }
         else {
-
-            $coundtryOFuser = \App\Models\Country::where('id', $this->country)->get()->toArray();
+            $coundtryOFuser = \App\Models\Country::where('id', $Is_user[0]['country'])->get()->toArray();
             $phonecode = $coundtryOFuser[0]["phonecode"];
             $to_phone_number_id = "+".$phonecode.$this->phone;
 

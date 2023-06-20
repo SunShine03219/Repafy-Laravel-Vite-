@@ -23,9 +23,9 @@ class CreateUser extends Component
     protected function rules()
     {
         return [
-            'division' => ['required'],
+            // 'division' => ['required'],
             'name' => ['required', 'string', 'max:255'],
-            'country' => ['required'],
+            // 'country' => ['required'],
             'phone' => ['required']
         ];
     }
@@ -94,6 +94,8 @@ class CreateUser extends Component
         for($i = 0; $i < $len; $i ++) {
             $this->countries[$i]["name"] = $this->countries[$i]["name"] . " ( + " . $this->countries[$i]["phonecode"] . " )";
         }
+
+        $this->country = "142";
 
         $this->divisions = \App\Models\Division::get()->toArray();
     }

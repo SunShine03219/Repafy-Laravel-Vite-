@@ -12,6 +12,8 @@
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
         <link rel="icon" href="/images/favicon.png">
 
+        <link rel="stylesheet" href="/css/custom.css">
+
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
 
@@ -19,14 +21,15 @@
     </head>
     <body class="font-sans text-gray-900 antialiased dark:bg-black">
         @guest
-            <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0">
-                <div>
-                    <a href="/">
-                        <x-application-logo class="w-40 h-30 fill-current text-gray-500" />
-                    </a>
-                </div>
+            <div class="min-h-screen flex justify-center items-center">
 
-                <div class="w-full sm:max-w-md mt-6 px-6 py-4 shadow-2xl sm:rounded-lg border-solid border border-gray-500">
+                <div class="px-10 h-full flex flex-col justify-center w-[100%] sm:w-[90%] md:w-[70%]">
+                    <div class="w-full flex justify-center items-center pb-10">
+                        <a href="/">
+                            <x-application-logo class="w-40 h-30 fill-current text-gray-500" />
+                        </a>
+                    </div>
+
                     {{ $slot }}
                     @livewireScripts
                 </div>
