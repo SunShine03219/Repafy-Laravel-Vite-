@@ -35,6 +35,11 @@
                             </a>
                         </div>
                     </div>
+                    <div class="md:flex md:items-center">
+                        <a href="{{ route('delete') }}"
+                        class="bg-black cursor-default	 mr-2 font-semibold inline-flex items-center p-3 text-sm sm:text-2xl focus:outline-none focus:border-indigo-700 transition duration-150 ease-in-out rounded-md">
+                        Delete</a>
+                    </div>
                     <div class="hidden md:flex md:items-center">
                         <a href="{{ route('login') }}"
                         class="bg-indigo-600 mr-2 font-semibold inline-flex items-center p-3 text-3xl sm:text-2xl text-white focus:outline-none focus:border-indigo-700 transition duration-150 ease-in-out rounded-md">
